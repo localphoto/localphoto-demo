@@ -40,8 +40,8 @@ const srcs = [
 
 export default async function ImageGrid() {
   const supabase: SupabaseClient<Database> = createClient(
-    "process.env?.NEXT_PUBLIC_SUPABASE_URL!",
-    "process.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY!"
+    process.env?.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
 
   //let { data: photos, error } = await supabase.from("photos").select("id,path");
@@ -95,7 +95,7 @@ async function ImageGridItem({
               alt="Photo"
               className="transform rounded-lg brightness-90 transition will-change-auto hover:brightness-110"
               style={{ transform: "translate3d(0, 0, 0)" }}
-              src={"/" + src}
+              src={"https://d2g3wyw4vlq6n.cloudfront.net/demo/photos/" + src}
               width={720}
               height={480}
               sizes="(max-width: 640px) 100vw,

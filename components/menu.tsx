@@ -54,11 +54,23 @@ export function Menu() {
               <MenubarSub>
                 <MenubarSubTrigger>Download App</MenubarSubTrigger>
                 <MenubarSubContent>
-                  <MenubarItem>Android</MenubarItem>
-                  <MenubarItem>iOS</MenubarItem>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=photo.local.android"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MenubarItem>Android</MenubarItem>
+                  </a>
+                  <a
+                    href="https://apps.apple.com/us/app/localphoto/id9599351125"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MenubarItem>iOS</MenubarItem>
+                  </a>
                 </MenubarSubContent>
               </MenubarSub>
-              <MenubarItem>
+              <MenubarItem disabled>
                 Preferences<MenubarShortcut>⌘,</MenubarShortcut>
               </MenubarItem>
             </MenubarContent>
@@ -69,55 +81,21 @@ export function Menu() {
               <MenubarSub>
                 <MenubarSubTrigger>New</MenubarSubTrigger>
                 <MenubarSubContent className="w-[230px]">
-                  <MenubarItem>
+                  <MenubarItem disabled>
                     Album <MenubarShortcut>⌘N</MenubarShortcut>
                   </MenubarItem>
                   <MenubarItem disabled>
                     Album from Selection <MenubarShortcut>⇧⌘N</MenubarShortcut>
                   </MenubarItem>
-                  <MenubarItem>
+                  <MenubarItem disabled>
                     Neural Album <MenubarShortcut>⌥⌘N</MenubarShortcut>
                   </MenubarItem>
-                  <MenubarItem>Album Folder</MenubarItem>
+                  <MenubarItem disabled>Album Folder</MenubarItem>
                 </MenubarSubContent>
               </MenubarSub>
-              <MenubarItem>
-                Open Stream URL... <MenubarShortcut>⌘U</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem>
-                Close Window <MenubarShortcut>⌘W</MenubarShortcut>
-              </MenubarItem>
               <MenubarSeparator />
-              <MenubarSub>
-                <MenubarSubTrigger>Library</MenubarSubTrigger>
-                <MenubarSubContent>
-                  <MenubarItem>Update Cloud Library</MenubarItem>
-                  <MenubarItem>Update Genius</MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>Organize Library...</MenubarItem>
-                  <MenubarItem>Export Library...</MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>Import Playlist...</MenubarItem>
-                  <MenubarItem disabled>Export Playlist...</MenubarItem>
-                  <MenubarItem>Show Duplicate Items</MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>Get Album Artwork</MenubarItem>
-                  <MenubarItem disabled>Get Track Names</MenubarItem>
-                </MenubarSubContent>
-              </MenubarSub>
-              <MenubarItem>
-                Import... <MenubarShortcut>⌘O</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem disabled>Burn Playlist to Disc...</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem>
-                Show in Finder <MenubarShortcut>⇧⌘R</MenubarShortcut>{" "}
-              </MenubarItem>
-              <MenubarItem>Convert</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem>Page Setup...</MenubarItem>
               <MenubarItem disabled>
-                Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                Import... <MenubarShortcut>⌘O</MenubarShortcut>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
@@ -146,43 +124,6 @@ export function Menu() {
               </MenubarItem>
               <MenubarItem disabled>
                 Deselect All <MenubarShortcut>⇧⌘A</MenubarShortcut>
-              </MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem>
-                Smart Dictation...{" "}
-                <MenubarShortcut>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
-                    <circle cx="17" cy="7" r="5" />
-                  </svg>
-                </MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem>
-                Emoji & Symbols{" "}
-                <MenubarShortcut>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                </MenubarShortcut>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>
@@ -317,14 +258,17 @@ export function Menu() {
                 </MenubarSubContent>
               </MenubarSub>
               <MenubarSeparator />
-              <MenubarCheckboxItem checked>Show Menu Bar</MenubarCheckboxItem>
-              <MenubarCheckboxItem checked>Show Sidebar</MenubarCheckboxItem>
-              <MenubarCheckboxItem>Show Detail Pane</MenubarCheckboxItem>
+              <MenubarCheckboxItem disabled checked>
+                Show Menu Bar
+              </MenubarCheckboxItem>
+              <MenubarCheckboxItem disabled checked>
+                Show Sidebar
+              </MenubarCheckboxItem>
               <MenubarSeparator />
-              <MenubarItem inset>
+              <MenubarItem disabled inset>
                 Zoom In <MenubarShortcut>⌘+</MenubarShortcut>
               </MenubarItem>
-              <MenubarItem inset>
+              <MenubarItem disabled inset>
                 Zoom Out <MenubarShortcut>⌘-</MenubarShortcut>
               </MenubarItem>
               <MenubarSeparator />
@@ -347,7 +291,7 @@ export function Menu() {
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
-        <div className="justify-center">
+        <div className="hidden justify-center">
           <span className="backdrop-blur-2xl backdrop-brightness-150 shadow-black/10 shadow-inner flex items-center rounded-full w-96 px-3">
             <SearchIcon className="text-pink-400" size={18} />
             <Input
@@ -357,7 +301,7 @@ export function Menu() {
             />
           </span>
         </div>
-        <div className="flex-1 flex justify-end">
+        <div className="hidden flex-1 flex justify-end">
           <a href="https://local.photo">
             <Button className="bg-pink-600 hover:bg-pink-500" size={"sm"}>
               Get your local.photo

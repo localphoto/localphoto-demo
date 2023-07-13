@@ -29,10 +29,12 @@ export default function Home() {
       />
       <div className="mt-10 flex-auto ml-64 flex">
         <div className="flex-1 overflow-y-auto">
-          <ScrollArea className="h-full">{/* <ImageGrid /> */}</ScrollArea>
+          <ScrollArea className="h-full">
+            <ImageGrid />
+          </ScrollArea>
         </div>
       </div>
-      <LoginDialog />
+      {/* <LoginDialog /> */}
     </div>
   );
 }

@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["pbs.twimg.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "d2g3wyw4vlq6n.cloudfront.net",
+        port: "",
+        pathname: "/demo/**",
+      },
+    ],
   },
 };
 

@@ -30,5 +30,12 @@ export default async function PhotoModalWrapper({
     .eq("id", photoId)
     .maybeSingle();
 
-  return photo && photo.path && <PhotoModal src={"/" + photo.path} />;
+  return (
+    photo &&
+    photo.path && (
+      <PhotoModal
+        src={"https://d2g3wyw4vlq6n.cloudfront.net/demo/photos/" + photo.path}
+      />
+    )
+  );
 }

@@ -31,7 +31,7 @@ export function Sidebar({ className, playlists }: SidebarProps) {
             Photos
           </h2>
           <div className="space-y-1">
-            <Button variant="ghost" className="w-full justify-start">
+            <Button variant="ghost" className="hidden w-full justify-start">
               <SearchIcon size={18} className="mr-2 h-4 w-4" />
               Search
             </Button>
@@ -39,15 +39,15 @@ export function Sidebar({ className, playlists }: SidebarProps) {
               <LayoutGridIcon size={18} className="mr-2 h-4 w-4" />
               Gallery
             </Button>
-            <Button variant="ghost" className="w-full justify-start">
+            <Button disabled variant="ghost" className="w-full justify-start">
               <ContactIcon size={18} className="mr-2 h-4 w-4" />
               People
             </Button>
-            <Button variant="ghost" className="w-full justify-start">
+            <Button disabled variant="ghost" className="w-full justify-start">
               <MapPinIcon size={18} className="mr-2 h-4 w-4" />
               Places
             </Button>
-            <Button variant="ghost" className="w-full justify-start">
+            <Button disabled variant="ghost" className="w-full justify-start">
               <AtSignIcon size={18} className="mr-2 h-4 w-4" />
               Albums
             </Button>
@@ -65,7 +65,7 @@ export function Sidebar({ className, playlists }: SidebarProps) {
             </Button>
           </div>
         </div>
-        <div className="py-2">
+        <div className="hidden py-2">
           <h2 className="relative px-7 text-sm opacity-20 font-bold tracking-tight">
             Pinned
           </h2>
