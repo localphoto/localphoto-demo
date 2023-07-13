@@ -59,8 +59,6 @@ export default async function ImageGrid() {
   `
   );
 
-  console.log(JSON.stringify(photos[0]));
-
   return (
     <div className="p-4 columns-1 gap-2 sm:columns-2 xl:columns-4 2xl:columns-4">
       {photos &&
