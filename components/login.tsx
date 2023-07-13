@@ -13,14 +13,11 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { KeyRoundIcon, TerminalIcon } from "lucide-react";
+import { KeyRoundIcon, CalendarClockIcon } from "lucide-react";
 
 export function LoginDialog() {
   return (
-    <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <Button variant="outline">Show Dialog</Button>
-      </AlertDialogTrigger>
+    <AlertDialog open>
       <AlertDialogContent>
         <AlertDialogHeader className="mb-4">
           <AlertDialogTitle className="">try.local.photo</AlertDialogTitle>
@@ -37,6 +34,15 @@ export function LoginDialog() {
                 <span className="flex-1 opacity-50">Password</span>
                 <span className="flex-1 justify-end">demo</span>
               </div>
+            </AlertDescription>
+          </Alert>
+          <Alert className="border-red-500 [&:has(svg)]:pl-4">
+            <div className="text-red-500 mb-2">
+              <CalendarClockIcon className="text-red-500 h-4 w-4" />
+            </div>
+            <AlertDescription className="text-primary">
+              The try.local.photo database is undergoing maintenance. Check back
+              after 2023-07-13T05:00:00.
             </AlertDescription>
           </Alert>
         </AlertDialogHeader>

@@ -32,6 +32,7 @@ export default function Home() {
           <ScrollArea className="h-full">{/* <ImageGrid /> */}</ScrollArea>
         </div>
       </div>
+      <LoginDialog />
     </div>
   );
 }
