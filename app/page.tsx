@@ -1,40 +1,12 @@
-import { Input } from "@/components/ui/input";
-import { Sidebar } from "@/components/sidebar";
-import { Menu } from "@/components/menu";
-import { Search } from "@/components/search";
-import Keyboard from "@/components/keyboard";
-import { LoginDialog } from "@/components/login";
 import ImageGrid from "@/components/ImageGrid";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-const playlists = [
-  "Beach day",
-  "Cars",
-  "Cats and dogs",
-  "Christmas",
-  "Food pictures",
-  "Memes",
-  "My pets",
-  "Space photos",
-  "Work trips",
-];
-
 export default function Home() {
   return (
-    <div>
-      <Menu />
-      <Sidebar
-        className="fixed left-0 bg-gray-50 border-r w-64 h-full"
-        playlists={playlists}
-      />
-      <div className="mt-10 flex-auto ml-64 flex">
-        <div className="flex-1 overflow-y-auto">
-          <ScrollArea className="h-full">
-            <ImageGrid />
-          </ScrollArea>
-        </div>
-      </div>
-      {/* <LoginDialog /> */}
+    <div className="flex-1 overflow-y-auto">
+      <ScrollArea className="h-full">
+        <ImageGrid photos={null} />
+      </ScrollArea>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -6,16 +8,14 @@ import {
   BracesIcon,
   ContactIcon,
   FolderIcon,
-  FoldersIcon,
-  GalleryHorizontalEndIcon,
   GalleryVerticalEndIcon,
   HashIcon,
   LayoutGridIcon,
   MapPinIcon,
-  PinIcon,
   SearchIcon,
 } from "lucide-react";
-import { PhotoDialog } from "./photo";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Playlist = string;
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -23,6 +23,8 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Sidebar({ className, playlists }: SidebarProps) {
+  const pathname = usePathname();
+
   return (
     <div className={cn("pb-12", className)}>
       <div className="space-y-4 py-4">
@@ -35,18 +37,32 @@ export function Sidebar({ className, playlists }: SidebarProps) {
               <SearchIcon size={18} className="mr-2 h-4 w-4" />
               Search
             </Button>
-            <Button variant="secondary" className="w-full justify-start">
-              <LayoutGridIcon size={18} className="mr-2 h-4 w-4" />
-              Gallery
-            </Button>
-            <Button disabled variant="ghost" className="w-full justify-start">
+            <Link href="/">
+              <Button
+                variant={pathname === "/" ? "secondary" : "ghost"}
+                className="w-full justify-start"
+              >
+                <LayoutGridIcon size={18} className="mr-2 h-4 w-4" />
+                Gallery
+              </Button>
+            </Link>
+            <Button
+              disabled
+              variant={pathname.startsWith("/people") ? "secondary" : "ghost"}
+              className="w-full justify-start"
+            >
               <ContactIcon size={18} className="mr-2 h-4 w-4" />
               People
             </Button>
-            <Button disabled variant="ghost" className="w-full justify-start">
-              <MapPinIcon size={18} className="mr-2 h-4 w-4" />
-              Places
-            </Button>
+            <Link href="/places">
+              <Button
+                variant={pathname.startsWith("/places") ? "secondary" : "ghost"}
+                className="w-full justify-start"
+              >
+                <MapPinIcon size={18} className="mr-2 h-4 w-4" />
+                Places
+              </Button>
+            </Link>
             <Button disabled variant="ghost" className="w-full justify-start">
               <AtSignIcon size={18} className="mr-2 h-4 w-4" />
               Albums

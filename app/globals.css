@@ -76,3 +76,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+.mapboxgl-ctrl-attrib {
+  @apply max-h-0 !important;
+  @apply max-w-0 !important;
+}
+
+.mapboxgl-ctrl-logo {
+  @apply max-h-0 !important;
+  @apply max-w-0 !important;
+}
+
+.mapboxgl-marker:hover {
+  z-index: 50;
+}

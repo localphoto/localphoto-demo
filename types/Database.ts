@@ -24,6 +24,43 @@ export interface Database {
         };
         Relationships: [];
       };
+      imagenet_predictions: {
+        Row: {
+          class_id: number;
+          created_at: string | null;
+          photo_id: number;
+          probability: number;
+          rank: number;
+        };
+        Insert: {
+          class_id: number;
+          created_at?: string | null;
+          photo_id: number;
+          probability: number;
+          rank: number;
+        };
+        Update: {
+          class_id?: number;
+          created_at?: string | null;
+          photo_id?: number;
+          probability?: number;
+          rank?: number;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "imagenet_predictions_class_id_fkey";
+            columns: ["class_id"];
+            referencedRelation: "imagenet";
+            referencedColumns: ["class_id"];
+          },
+          {
+            foreignKeyName: "imagenet_predictions_photo_id_fkey";
+            columns: ["photo_id"];
+            referencedRelation: "photos";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
       photos: {
         Row: {
           created_at: string | null;
@@ -34,7 +71,7 @@ export interface Database {
         Insert: {
           created_at?: string | null;
           embedding?: string | null;
-          id?: number;
+          id: number;
           path?: string | null;
         };
         Update: {
@@ -50,6 +87,18 @@ export interface Database {
       [_ in never]: never;
     };
     Functions: {
+      image_search: {
+        Args: {
+          query_id: number;
+          match_threshold: number;
+          match_count: number;
+        };
+        Returns: {
+          id: number;
+          path: string;
+          similarity: number;
+        }[];
+      };
       ivfflathandler: {
         Args: {
           "": unknown;
